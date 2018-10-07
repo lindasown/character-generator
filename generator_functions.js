@@ -2,7 +2,7 @@ function generator() {
 	
 	var that = this;
 	this.info = informationPool['informations'];
-	info['epTotal'] = info['epBase'];
+	this.info['epTotal'] = this.info['epBase'];
 	
 
 
@@ -19,8 +19,9 @@ function generator() {
 
 	this.init = function() {
 		var datalist = Object.keys(regularSkills);
+		console.log(datalist);
 		for (var iter in datalist) {
-			var data = regularSkills[datalist[iter]];
+			var data = regularSkills[datalist[iter]];			
 			var key = datalist[iter];
 			that.generateForm('regularSkills', data, key)	
 		}
@@ -69,9 +70,9 @@ function generator() {
 	}
 	
 	this.recalculateEp = function() {
-		info['epTotal'] = info['epBase'] + info['epDF'] + info['epDays'];
-		$('#epTotal').text(info['epTotal']);
-		$('#epToUse').text(info['epTotal'] - info['epUsed']);
+		info['epTotal'] = that.info['epBase'] + that.info['epDF'] + that.info['epDays'];
+		$('#epTotal').text(that.info['epTotal']);
+		$('#epToUse').text(that.info['epTotal'] - that.info['epUsed']);
 	}
 
 	this.removeSkillFromList = function(category, name, label, rank, legacy, costs) {
@@ -80,7 +81,7 @@ function generator() {
 		delete informationPool[category][legacy];
 		delete informationPool[category][name];
 
-		info['epUsed'] = info['epUsed'] - (parseInt(costs) * parseInt(rank));
+		that.info['epUsed'] = that.info['epUsed'] - (parseInt(costs) * parseInt(rank));
 
 
 		if (name === 'magicalSkills') {
@@ -100,7 +101,7 @@ function generator() {
 			"costs" : costs
 		};
 
-		info['epUsed'] = info['epUsed'] + (parseInt(costs) * parseInt(rank));
+		that.info['epUsed'] = that.info['epUsed'] + (parseInt(costs) * parseInt(rank));
 
 		if (name === 'magicalSkills') {
 			$('#magicalSkills div.skillInput').removeClass('skillDisabled');
@@ -122,16 +123,16 @@ function generator() {
 
 
 
-			if ((info['epUsed'] + (parseInt($(this).attr('costs')) * parseInt(val))) <= info['epTotal']) {
+			if ((that.info['epUsed'] + (parseInt($(this).attr('costs')) * parseInt(val))) <= that.info['epTotal']) {
 				if (val !== '0') {
 				that.addSkillToList(cat, skillClass, $(this).attr('name'), $(this).parent().find('.skillName').text(), parseInt(val), $(this).attr('legacy'), parseInt($(this).attr('costs')));
 				} else {
-					alert('So viele EPs hast du nicht zur Verfügung.');
+					alert('So viele EPs hast du nicht zur VerfÃ¼gung.');
 				}	
 
 				that.recalculateEp();
-				$('#epUsed').text(info['epUsed']);
-				$('#epToUse').text(info['epTotal'] - info['epUsed']);
+				$('#epUsed').text(that.info['epUsed']);
+				$('#epToUse').text(that.info['epTotal'] - that.info['epUsed']);
 			}
 		
 		}
@@ -142,21 +143,21 @@ function generator() {
 			var cat = $(this).parents('section').attr('id');
 			var skillClass = $(this).parents('article').attr('class');
 			if ($(this).hasClass('skillChecked')) {
-				info['epUsed'] = info['epUsed'] - parseInt($(this).attr('costs'));
+				that.info['epUsed'] = that.info['epUsed'] - parseInt($(this).attr('costs'));
 				$(this).removeClass('skillChecked');
 				that.removeSkillFromList(cat, $(this).attr('name'), $(this).parent().find('.skillName').text(), false, $(this).attr('legacy'));
 			} else {
-				if (info['epUsed'] + parseInt($(this).attr('costs')) <= info['epTotal']) {
+				if (that.info['epUsed'] + parseInt($(this).attr('costs')) <= that.info['epTotal']) {
 					$(this).addClass('skillChecked');	
 					that.addSkillToList(cat, skillClass, $(this).attr('name'), $(this).parent().find('.skillName').text(), 1, $(this).attr('legacy'), parseInt($(this).attr('costs')));
 	
 				} else {
-					alert('So viele EPs hast du nicht zur Verfügung.');
+					alert('So viele EPs hast du nicht zur VerfÃ¼gung.');
 				}	
 			}	
 			that.recalculateEp();
-			$('#epUsed').text(info['epUsed']);
-			$('#epToUse').text(info['epTotal'] - info['epUsed']);
+			$('#epUsed').text(that.info['epUsed']);
+			$('#epToUse').text(that.info['epTotal'] - that.info['epUsed']);
 		}
 	});
 
@@ -165,16 +166,16 @@ function generator() {
 	});
 
 	$('input[name="dfCount"]').on('keyup', function() { 
-		info.dfCount = parseInt($(this).val());
-		info['epDF'] = info['dfCount'] * info['epPerDF']; 
+		that.info.dfCount = parseInt($(this).val());
+		that.info['epDF'] = that.info['dfCount'] * that.info['epPerDF']; 
 		that.recalculateEp();
 	})
 
 	$('input[name="dayCount"]').on('keyup', function() {
-		info['dayCount'] = parseInt($(this).val());
-		info['dayCount'] = parseInt($(this).val());
-		info['epDays'] = Math.round(info['dayCount'] / 10);
-		info['epDF'] = info['dfCount'] * info['epPerDF'];
+		that.info['dayCount'] = parseInt($(this).val());
+		that.info['dayCount'] = parseInt($(this).val());
+		that.info['epDays'] = Math.round(that.info['dayCount'] / 10);
+		that.info['epDF'] = that.info['dfCount'] * that.info['epPerDF'];
 		that.recalculateEp();
 	})
 
@@ -190,12 +191,12 @@ function generator() {
 		informationPool[4]['informations'].playerName = $(this).val();
 	})
 
-	$( "#skillTabs" ).tabs();
+	//$( "#skillTabs" ).tabs();
 
 	
 	
-	$('#epTotal').text(info['epTotal']);
-	$('#epToUse').text(parseInt(info['epTotal']) - info['epUsed']);
+	$('#epTotal').text(that.info['epTotal']);
+	$('#epToUse').text(parseInt(that.info['epTotal']) - that.info['epUsed']);
 
 	
 	
