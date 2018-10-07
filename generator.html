@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Drachenfest Charakter Generator</title>
+		
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="https://marvelous.das-rpg.ch/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4"></script>
+		<script type="text/javascript" src="generator_functions.js"></script>
+		<script type="text/javascript" src="generator_models.js"></script>
+		<script>
+		$(function() {
+			var dfGenerator = new generator();
+			dfGenerator.init();
+		});
+			
+		</script>
+	</head>
+	<body>
+		<div id="regularSkills"></div>
+		<div id="magicalSkills"></div>
+	</body>
+	
+
+</html>
