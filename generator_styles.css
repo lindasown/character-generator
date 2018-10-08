@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Josefin+Slab');
+
+h2, li.ui-tabs-tab {
+	font-family: 'Amatic SC', cursive;
+}
+
+li.ui-tabs-tab a {
+	font-size: 1.6em;
+}
+
+span, label {
+	font-family: 'Josefin Slab', serif;
+	display:block;
+}
+
+div.skillInput {
+	height: 15px;
+	width:15px;
+	border: 2px solid grey;
+	cursor: pointer;
+	position:absolute;
+	right:10px;
+	top: 10px;
+}
+
+input.skillInput {
+	width:50px;
+}
+
+.skillContainer > article > span {
+	position:absolute;
+	right:35px;
+	top: 10px;
+}
+
+div.skillInput.skillDisabled {
+	background: lightgrey;
+	border-color: lightgrey;
+	cursor: initial;
+}
+
+div.skillInput.skillChecked {
+	background: lightgreen;
+}
+
+section {
+	display:flex;
+	flex-wrap: wrap;
+	justify-content:space-between;
+	margin-top: 40px;
+}
+
+section#ep {
+	margin-bottom: 20px;
+}
+
+section#ep > div {
+	width:100%;
+}
+
+article {
+	margin-bottom: 10px;
+	background:#efefef;
+	padding: 10px;
+	width:100%;
+	justify-content:space-between;
+	align-items:center;
+	position:relative;
+}
+
+#regularSkills label, #magicalSkills label {
+	width: 70%;
+	cursor: pointer;
+}
+
+.descriptiontext {
+	display:none;
+	width:100%;
+	margin-top:10px;
+}
+
+#character {
+	margin-top: 20px;
+}
