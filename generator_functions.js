@@ -10,8 +10,6 @@ function generator() {
 		var data = regularSkills[skillIter];
 		generateForm('regularSkills', data)	
 	}
-
-
 	for (var skillIter in regularSkills) {	
 		var data = regularSkills[skillIter];
 		generateForm('regularSkills', data)	
@@ -191,7 +189,7 @@ function generator() {
 		informationPool[4]['informations'].playerName = $(this).val();
 	})
 
-	//$( "#skillTabs" ).tabs();
+	$( "#skillTabs" ).tabs();
 
 	
 	
@@ -202,4 +200,3 @@ function generator() {
 	
 
 }
-
