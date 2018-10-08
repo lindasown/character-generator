@@ -24,15 +24,38 @@ informationPool = {
 	}
 }
 
-var regularSkills = {
+pageStructure = {
+	"showLabel" : "Show Character",
+	"printLabel" : "Print Character",
+	"tabs" : {
+		"regularSkills" : {
+			"id" : "regularSkills",
+			"label" : "Regular Skills"
+		}, 
+		"magicalSkills" : {
+			"id" : "magicalSkills",
+			"label" : "Magical Skills"
+		},
+		"alchemisticBasicSkills" : {
+			"id" : "alchemisticBasicSkills",
+			"label" : "Alchemistic Skills"
+		},
+		"alchemisticAdvSkills" : {
+			"id" : "alchemisticAdvSkills",
+			"label" : "Adv. Alchemistic Skills"
+		}
+	}
+}
+
+regularSkills = {
 	"fight" : {
 		"title" : "Kampffertigkeiten",
 		"onehandedweapons" : {
 			"name" :		"onehandedweapons", 
-			"label-de" :	"Einhändige Waffen nutzen",
+			"label-de" :	"EinhÃ¤ndige Waffen nutzen",
 			"label-en" :	"One handed weapons",
-			"description" : "<p>Mit dieser Charakterfertigkeit darf der Charakter einhändige Waffen bis zu einer maximalen Länge von 115cm führen. Hierzu zählen z. B. auch Dolche und Wurfwaffen.</p>" +
-							"<p>Hinweis: Diese Charakterfertigkeit ist Voraussetzung für die Fertigkeit «Kampf mit zwei Waffen».</p>",
+			"description" : "<p>Mit dieser Charakterfertigkeit darf der Charakter einhÃ¤ndige Waffen bis zu einer maximalen LÃ¤nge von 115cm fÃ¼hren. Hierzu zÃ¤hlen z. B. auch Dolche und Wurfwaffen.</p>" +
+							"<p>Hinweis: Diese Charakterfertigkeit ist Voraussetzung fÃ¼r die Fertigkeit Â«Kampf mit zwei WaffenÂ».</p>",
 			"epCosts" :		1, 
 			"rank" :		false,
 			"condition" :	false, 
@@ -42,9 +65,9 @@ var regularSkills = {
 		}, 
 		"twohandedweapons" : {
 			"name" :		"twohandedweapons", 
-			"label-de" :	"Zweihändige Waffen nutzen",
+			"label-de" :	"ZweihÃ¤ndige Waffen nutzen",
 			"label-en" :	"Two handed weapons",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter zweihändige Waffen bis zu einer maximalen Länge von 180cm führen.",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter zweihÃ¤ndige Waffen bis zu einer maximalen LÃ¤nge von 180cm fÃ¼hren.",
 			"epCosts" :		2, 
 			"rank" :		false,
 			"condition" :	false, 
@@ -55,7 +78,7 @@ var regularSkills = {
 			"name" :		"poleweapons", 
 			"label-de" :	"Stangenwaffen nutzen",
 			"label-en" :	"Pole weapons",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter Stangenwaffen bis zu einer maximalen Länge von 250cm führen.",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter Stangenwaffen bis zu einer maximalen LÃ¤nge von 250cm fÃ¼hren.",
 			"epCosts" :		2, 
 			"rank" :		false,
 			"condition" :	false, 
@@ -66,7 +89,7 @@ var regularSkills = {
 			"name" :		"ballisticweapons", 
 			"label-de" :	"Schusswaffen nutzen",
 			"label-en" :	"Ballistic weapons",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter zweihändige Waffen bis zu einer maximalen Länge von 180cm führen.",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter zweihÃ¤ndige Waffen bis zu einer maximalen LÃ¤nge von 180cm fÃ¼hren.",
 			"epCosts" :		2, 
 			"rank" :		false,
 			"condition" :	false, 
@@ -75,9 +98,9 @@ var regularSkills = {
 		}, 
 		"siegeweapons" : {
 			"name" :		"siegeweapons", 
-			"label-de" :	"Belagerungs- und übergrosse Schusswaffen nutzen",
+			"label-de" :	"Belagerungs- und Ã¼bergrosse Schusswaffen nutzen",
 			"label-en" :	"Siege weapons",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter zweihändige Waffen bis zu einer maximalen Länge von 180cm führen.",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter zweihÃ¤ndige Waffen bis zu einer maximalen LÃ¤nge von 180cm fÃ¼hren.",
 			"epCosts" :		3, 
 			"rank" :		false,
 			"condition" :	false, 
@@ -88,8 +111,8 @@ var regularSkills = {
 			"name" :		"ambidexterity", 
 			"label-de" :	"Kampf mit zwei Waffen",
 			"label-en" :	"Ambidexterity",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		2, 
 			"rank" :		false,
 			"condition" :	"onehandedweapons", 
@@ -100,8 +123,8 @@ var regularSkills = {
 			"name" :		"brawling", 
 			"label-de" :	"Nahkampf, + 1 Rang",
 			"label-en" :	"Brawling, + 1 Rank",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		1, 
 			"rank" :		9,
 			"condition" :	false, 
@@ -112,8 +135,8 @@ var regularSkills = {
 			"name" :		"shielduse", 
 			"label-de" :	"Schild nutzen",
 			"label-en" :	"shield use",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		3, 
 			"rank" :		false,
 			"condition" :	false, 
@@ -122,13 +145,13 @@ var regularSkills = {
 		}
 	}, 
 	"armour" : {
-		"title" : "Dargestellte Rüstung",
+		"title" : "Dargestellte RÃ¼stung",
 		"lightarmour" : {
 			"name" :		"lightarmour", 
-			"label-de" :	"Leichte Rüstung",
+			"label-de" :	"Leichte RÃ¼stung",
 			"label-en" :	"light armour",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		2, 
 			"rank" :		false,
 			"condition" :	false, 
@@ -137,10 +160,10 @@ var regularSkills = {
 		}, 
 		"mediumarmour" : {
 			"name" :		"mediumarmour", 
-			"label-de" :	"Mittlere Rüstung",
+			"label-de" :	"Mittlere RÃ¼stung",
 			"label-en" :	"medium armour",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		4, 
 			"rank" :		false,
 			"condition" :	false, 
@@ -149,10 +172,10 @@ var regularSkills = {
 		}, 
 		"heavyarmour" : {
 			"name" :		"heavyarmour", 
-			"label-de" :	"Schwere Rüstung",
+			"label-de" :	"Schwere RÃ¼stung",
 			"label-en" :	"heavy armour",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		8, 
 			"rank" :		false,
 			"condition" :	false, 
@@ -166,8 +189,8 @@ var regularSkills = {
 			"name" :		"firstaid", 
 			"label-de" :	"Erste Hilfe",
 			"label-en" :	"First Aid",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		1, 
 			"rank" :		false,
 			"condition" :	false, 
@@ -179,8 +202,8 @@ var regularSkills = {
 			"name" :		"healing", 
 			"label-de" :	"Heilkunde",
 			"label-en" :	"Healing",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		2, 
 			"rank" :		false,
 			"condition" :	"firstaid", 
@@ -192,8 +215,8 @@ var regularSkills = {
 			"name" :		"medicine", 
 			"label-de" :	"Arztkunde",
 			"label-en" :	"Medicine",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		4, 
 			"rank" :		false,
 			"condition" :	"healing", 
@@ -207,8 +230,8 @@ var regularSkills = {
 			"name" :		"bodyregeneration", 
 			"label-de" :	"Regeneration",
 			"label-en" :	"body regeneration",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		2, 
 			"rank" :		false,
 			"condition" :	false, 
@@ -217,10 +240,10 @@ var regularSkills = {
 		}, 
 		"toughess" : {
 			"name" :		"toughness", 
-			"label-de" :	"Zähigkeit",
+			"label-de" :	"ZÃ¤higkeit",
 			"label-en" :	"toughness",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		2, 
 			"rank" :		false,
 			"condition" :	false, 
@@ -229,13 +252,13 @@ var regularSkills = {
 		}
 	}, 
 	"adventure" : {
-		"title" : "Abenteuerfähigkeiten", 
+		"title" : "AbenteuerfÃ¤higkeiten", 
 		"makefire" : {
 			"name" :		"makefire", 
 			"label-de" :	"Feuer machen",
 			"label-en" :	"Make Fire",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		1, 
 			"rank" :		false,
 			"condition" :	false, 
@@ -244,10 +267,10 @@ var regularSkills = {
 		}, 
 		"pick" : {
 			"name" :		"pick", 
-			"label-de" :	"Schlösser öffnen / bauen",
+			"label-de" :	"SchlÃ¶sser Ã¶ffnen / bauen",
 			"label-en" :	"Pick / Build Locks",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		2, 
 			"rank" :		false,
 			"condition" :	false, 
@@ -256,10 +279,10 @@ var regularSkills = {
 		}, 
 		"findtraps" : {
 			"name" :		"findtraps", 
-			"label-de" :	"Fallen finden / entschärfen / bauen",
+			"label-de" :	"Fallen finden / entschÃ¤rfen / bauen",
 			"label-en" :	"Find / Disarm / Build Traps",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		3, 
 			"rank" :		false,
 			"condition" :	false, 
@@ -270,8 +293,8 @@ var regularSkills = {
 			"name" :		"readwrite", 
 			"label-de" :	"Lesen und Schreiben",
 			"label-en" :	"Read / Write",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		1, 
 			"rank" :		false,
 			"condition" :	false, 
@@ -280,10 +303,10 @@ var regularSkills = {
 		}, 
 		"basicmathematics" : {
 			"name" :		"basicmathematics", 
-			"label-de" :	"Zählen und Rechnen",
+			"label-de" :	"ZÃ¤hlen und Rechnen",
 			"label-en" :	"Basic Mathematics",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		1, 
 			"rank" :		false,
 			"condition" :	false, 
@@ -292,10 +315,10 @@ var regularSkills = {
 		}, 
 		"herbalism" : {
 			"name" :		"herbalism", 
-			"label-de" :	"Kräuteranbau / Tierzucht",
+			"label-de" :	"KrÃ¤uteranbau / Tierzucht",
 			"label-en" :	"Herbalism / Animal Breeding",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		1, 
 			"rank" :		false,
 			"condition" :	false, 
@@ -309,8 +332,8 @@ var regularSkills = {
 			"name" :		"woodwork", 
 			"label-de" :	"Holzarbeiten / Schild und Wehranlagen reparieren",
 			"label-en" :	"Wood Work / Repair Shield and Defence Constructions",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		2, 
 			"rank" :		false,
 			"condition" :	false, 
@@ -319,10 +342,10 @@ var regularSkills = {
 		}, 
 		"leatherwork" : {
 			"name" :		"leatherwork", 
-			"label-de" :	"Lederarbeiten / Lederrüstung reparieren",
+			"label-de" :	"Lederarbeiten / LederrÃ¼stung reparieren",
 			"label-en" :	"Leather Work / Repair Leather Armour",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		2, 
 			"rank" :		false,
 			"condition" :	false, 
@@ -331,10 +354,10 @@ var regularSkills = {
 		}, 
 		"metalwork" : {
 			"name" :		"metalwork", 
-			"label-de" :	"Metallarbeiten / Metallrüstung reparieren",
+			"label-de" :	"Metallarbeiten / MetallrÃ¼stung reparieren",
 			"label-en" :	"Metal Work / Repair Metal Armour",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		3, 
 			"rank" :		false,
 			"condition" :	false, 
@@ -343,13 +366,13 @@ var regularSkills = {
 		}
 	},
 	"access" : {
-		"title" : "Zugänge zu Sonderfähigkeiten",
+		"title" : "ZugÃ¤nge zu SonderfÃ¤higkeiten",
 		"magicalSkills" : {
 			"name" :		"magicalSkills", 
 			"label-de" :	"Magiefertigkeiten",
 			"label-en" :	"Magical Skills",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		2, 
 			"rank" :		false,
 			"condition" :	false, 
@@ -359,10 +382,10 @@ var regularSkills = {
 		}, 
 		"simpleAlchemisticSkills" : {
 			"name" :		"simpleAlchemisticSkills", 
-			"label-de" :	"einfache Alchemiefähigkeiten",
+			"label-de" :	"einfache AlchemiefÃ¤higkeiten",
 			"label-en" :	"simple Alchemistic Skills",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		1, 
 			"rank" :		false,
 			"condition" :	false, 
@@ -371,10 +394,10 @@ var regularSkills = {
 		}, 
 		"advancesAlchemisticSkills" : {
 			"name" :		"advancedAlchemisticSkills", 
-			"label-de" :	"erweiterte Alchemiefähigkeiten",
+			"label-de" :	"erweiterte AlchemiefÃ¤higkeiten",
 			"label-en" :	"advanced Alchemistic Skills",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		2, 
 			"rank" :		false,
 			"condition" :	false, 
@@ -387,8 +410,8 @@ var regularSkills = {
 			"name" :		"damageResistance", 
 			"label-de" :	"+1 Rang Schadensresistenz",
 			"label-en" :	"+1 Rank Damage Resistance",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		4, 
 			"rank" :		9,
 			"condition" :	false, 
@@ -399,8 +422,8 @@ var regularSkills = {
 			"name" :		"magicResistance", 
 			"label-de" :	"+1 Rang Magieresistenz",
 			"label-en" :	"+1 Rank Magic Resistance",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		2, 
 			"rank" :		9,
 			"condition" :	false, 
@@ -411,8 +434,8 @@ var regularSkills = {
 			"name" :		"alchemisticResistance", 
 			"label-de" :	"+1 Rang Alchemieresistenz",
 			"label-en" :	"+1 Rank Alchemistic Resistance",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		2, 
 			"rank" :		9,
 			"condition" :	false, 
@@ -422,15 +445,15 @@ var regularSkills = {
 	}
 }
 
-var magicalSkills	= {
+magicalSkills	= {
 	"timelimitedCurses" : {
 		"title" : "Zeitlich begrenzte Zauber", 
 		"blindness" : {
 			"name" :		"blindness", 
 			"label-de" :	"Blindheit",
 			"label-en" :	"Blindness",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		1, 
 			"condition" :	'magicalSkills', 
 			"rank" :		false,
@@ -441,8 +464,8 @@ var magicalSkills	= {
 			"name" :		"mute", 
 			"label-de" :	"Schweigen",
 			"label-en" :	"Mute",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		1, 
 			"rank" :		false,
 			"condition" :	'magicalSkills', 
@@ -453,8 +476,8 @@ var magicalSkills	= {
 			"name" :		"deafness", 
 			"label-de" :	"Taubheit",
 			"label-en" :	"Deafness",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		1, 
 			"rank" :		false,
 			"condition" :	'magicalSkills', 
@@ -465,8 +488,8 @@ var magicalSkills	= {
 			"name" :		"sleep", 
 			"label-de" :	"Schlaf",
 			"label-en" :	"Sleep",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		2, 
 			"rank" :		false,
 			"condition" :	'magicalSkills', 
@@ -480,8 +503,8 @@ var magicalSkills	= {
 			"name" :		"gustOfWind", 
 			"label-de" :	"Windstoss",
 			"label-en" :	"Gust of Wind",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		1, 
 			"rank" :		false,
 			"condition" :	'magicalSkills', 
@@ -492,8 +515,8 @@ var magicalSkills	= {
 			"name" :		"energyball", 
 			"label-de" :	"Energieball",
 			"label-en" :	"Energyball",
-			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhändige Waffen bis zu einer jeweiligen maximalen Länge von 115cm führen.</p>" + 
-							"Hinweis: Voraussetzung für diese Fertigkeit ist der Besitz der Fertigkeit «Einhändige Waffen nutzen».",
+			"description" : "Mit dieser Charakterfertigkeit darf der Charakter gleichzeitig zwei einhÃ¤ndige Waffen bis zu einer jeweiligen maximalen LÃ¤nge von 115cm fÃ¼hren.</p>" + 
+							"Hinweis: Voraussetzung fÃ¼r diese Fertigkeit ist der Besitz der Fertigkeit Â«EinhÃ¤ndige Waffen nutzenÂ».",
 			"epCosts" :		4, 
 			"rank" :		false,
 			"condition" :	'magicalSkills', 
@@ -502,5 +525,5 @@ var magicalSkills	= {
 		}
 	}
 };
-var alchemisticBasicSkills	= {};
-var alchemisticAdvSkills	= {};
+alchemisticBasicSkills	= {};
+alchemisticAdvSkills	= {};
