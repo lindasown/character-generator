@@ -1,9 +1,11 @@
 function generator() {
 	var that = this;
+	this.parentElement = $('#skillTabs');
 	this.info = informationPool['informations'];
 	this.info['epTotal'] = this.info['epBase'];
 	
 	this.init = function() {
+		that.generatePageStructure();
 		var datalist = Object.keys(regularSkills);
 		console.log(datalist);
 		for (var iter in datalist) {
@@ -30,6 +32,15 @@ function generator() {
 
 		that.dataCollector();
 		that.uiFunctions();
+	}
+
+	that.generatePageStructure = function() {
+		for (var iter in pageStructure['tabs']) {
+			var tab = pageStructure['tabs'][iter];
+			$(that.parentElement).find('ul.tablist').append('<li><a href="#' + tab['id'] + '">' + tab['label'] + '</a></li>');
+			$(that.parentElement).append('<section id="' + tab['id'] + '"></section>');
+
+		}
 	}
 
 
